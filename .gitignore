@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Temporary & Scratch
+scratch/
+__pycache__/
+*.pyc
+
+# Environment & Logs
+.env
+*.log
+
+# OS generated
+.DS_Store
+Thumbs.db

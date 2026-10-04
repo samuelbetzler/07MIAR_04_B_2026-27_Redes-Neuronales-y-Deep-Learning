@@ -1,0 +1,240 @@
+[
+  {
+    "elementId": "link10-11",
+    "source": "10",
+    "target": null,
+    "weight": -2.42291,
+    "isDead": false
+  },
+  {
+    "elementId": "link9-11",
+    "source": "9",
+    "target": null,
+    "weight": 0.63503,
+    "isDead": false
+  },
+  {
+    "elementId": "link8-10",
+    "source": "8",
+    "target": null,
+    "weight": -1.86546,
+    "isDead": false
+  },
+  {
+    "elementId": "link7-10",
+    "source": "7",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link6-10",
+    "source": "6",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link5-10",
+    "source": "5",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link8-9",
+    "source": "8",
+    "target": null,
+    "weight": 0.49978,
+    "isDead": false
+  },
+  {
+    "elementId": "link7-9",
+    "source": "7",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link6-9",
+    "source": "6",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link5-9",
+    "source": "5",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link4-8",
+    "source": "4",
+    "target": null,
+    "weight": 1.09949,
+    "isDead": false
+  },
+  {
+    "elementId": "link3-8",
+    "source": "3",
+    "target": null,
+    "weight": 0.81872,
+    "isDead": false
+  },
+  {
+    "elementId": "link2-8",
+    "source": "2",
+    "target": null,
+    "weight": 1.02362,
+    "isDead": false
+  },
+  {
+    "elementId": "link1-8",
+    "source": "1",
+    "target": null,
+    "weight": -0.28172,
+    "isDead": false
+  },
+  {
+    "elementId": "link4-7",
+    "source": "4",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link3-7",
+    "source": "3",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link2-7",
+    "source": "2",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link1-7",
+    "source": "1",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link4-6",
+    "source": "4",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link3-6",
+    "source": "3",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link2-6",
+    "source": "2",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link1-6",
+    "source": "1",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link4-5",
+    "source": "4",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link3-5",
+    "source": "3",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link2-5",
+    "source": "2",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "link1-5",
+    "source": "1",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "linky-4",
+    "source": "y",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  },
+  {
+    "elementId": "linkx-4",
+    "source": "x",
+    "target": null,
+    "weight": 0.57572,
+    "isDead": false
+  },
+  {
+    "elementId": "linky-3",
+    "source": "y",
+    "target": null,
+    "weight": 0.54263,
+    "isDead": false
+  },
+  {
+    "elementId": "linkx-3",
+    "source": "x",
+    "target": null,
+    "weight": -0.50046,
+    "isDead": false
+  },
+  {
+    "elementId": "linky-2",
+    "source": "y",
+    "target": null,
+    "weight": -0.48776,
+    "isDead": false
+  },
+  {
+    "elementId": "linkx-2",
+    "source": "x",
+    "target": null,
+    "weight": -0.35892,
+    "isDead": false
+  },
+  {
+    "elementId": "linky-1",
+    "source": "y",
+    "target": null,
+    "weight": -0.36457,
+    "isDead": false
+  },
+  {
+    "elementId": "linkx-1",
+    "source": "x",
+    "target": null,
+    "weight": 0,
+    "isDead": true
+  }
+]

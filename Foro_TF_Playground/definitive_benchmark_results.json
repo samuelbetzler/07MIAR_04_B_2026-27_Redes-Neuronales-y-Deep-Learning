@@ -1,0 +1,1010 @@
+[
+  {
+    "dataset": "circle",
+    "reg": "none",
+    "lr": 0.003,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.044",
+        "testStr": "0.102",
+        "trainLoss": 0.044,
+        "testLoss": 0.102,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.028",
+        "testStr": "0.096",
+        "trainLoss": 0.028,
+        "testLoss": 0.096,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.025",
+        "testStr": "0.103",
+        "trainLoss": 0.025,
+        "testLoss": 0.103,
+        "deadCount": 0,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.044",
+      "0.028",
+      "0.025"
+    ],
+    "testReadings": [
+      "0.102",
+      "0.096",
+      "0.103"
+    ],
+    "deadReadings": [
+      0,
+      0,
+      0
+    ],
+    "trMean": 0.0323,
+    "trStd": 0.0102,
+    "teMean": 0.1003,
+    "teStd": 0.0038,
+    "deadMean": 0,
+    "deadPct": 0
+  },
+  {
+    "dataset": "circle",
+    "reg": "none",
+    "lr": 0.03,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.026",
+        "testStr": "0.095",
+        "trainLoss": 0.026,
+        "testLoss": 0.095,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.024",
+        "testStr": "0.100",
+        "trainLoss": 0.024,
+        "testLoss": 0.1,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.026",
+        "testStr": "0.104",
+        "trainLoss": 0.026,
+        "testLoss": 0.104,
+        "deadCount": 0,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.026",
+      "0.024",
+      "0.026"
+    ],
+    "testReadings": [
+      "0.095",
+      "0.100",
+      "0.104"
+    ],
+    "deadReadings": [
+      0,
+      0,
+      0
+    ],
+    "trMean": 0.0253,
+    "trStd": 0.0012,
+    "teMean": 0.0997,
+    "teStd": 0.0045,
+    "deadMean": 0,
+    "deadPct": 0
+  },
+  {
+    "dataset": "circle",
+    "reg": "none",
+    "lr": 0.3,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.033",
+        "testStr": "0.097",
+        "trainLoss": 0.033,
+        "testLoss": 0.097,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.036",
+        "testStr": "0.097",
+        "trainLoss": 0.036,
+        "testLoss": 0.097,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.048",
+        "testStr": "0.155",
+        "trainLoss": 0.048,
+        "testLoss": 0.155,
+        "deadCount": 0,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.033",
+      "0.036",
+      "0.048"
+    ],
+    "testReadings": [
+      "0.097",
+      "0.097",
+      "0.155"
+    ],
+    "deadReadings": [
+      0,
+      0,
+      0
+    ],
+    "trMean": 0.039,
+    "trStd": 0.0079,
+    "teMean": 0.1163,
+    "teStd": 0.0335,
+    "deadMean": 0,
+    "deadPct": 0
+  },
+  {
+    "dataset": "circle",
+    "reg": "L1",
+    "lr": 0.003,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.041",
+        "testStr": "0.068",
+        "trainLoss": 0.041,
+        "testLoss": 0.068,
+        "deadCount": 3,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.036",
+        "testStr": "0.079",
+        "trainLoss": 0.036,
+        "testLoss": 0.079,
+        "deadCount": 5,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.035",
+        "testStr": "0.082",
+        "trainLoss": 0.035,
+        "testLoss": 0.082,
+        "deadCount": 9,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.041",
+      "0.036",
+      "0.035"
+    ],
+    "testReadings": [
+      "0.068",
+      "0.079",
+      "0.082"
+    ],
+    "deadReadings": [
+      3,
+      5,
+      9
+    ],
+    "trMean": 0.0373,
+    "trStd": 0.0032,
+    "teMean": 0.0763,
+    "teStd": 0.0074,
+    "deadMean": 6,
+    "deadPct": 17.6
+  },
+  {
+    "dataset": "circle",
+    "reg": "L1",
+    "lr": 0.03,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.035",
+        "testStr": "0.083",
+        "trainLoss": 0.035,
+        "testLoss": 0.083,
+        "deadCount": 20,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.035",
+        "testStr": "0.084",
+        "trainLoss": 0.035,
+        "testLoss": 0.084,
+        "deadCount": 22,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.035",
+        "testStr": "0.084",
+        "trainLoss": 0.035,
+        "testLoss": 0.084,
+        "deadCount": 22,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.035",
+      "0.035",
+      "0.035"
+    ],
+    "testReadings": [
+      "0.083",
+      "0.084",
+      "0.084"
+    ],
+    "deadReadings": [
+      20,
+      22,
+      22
+    ],
+    "trMean": 0.035,
+    "trStd": 0,
+    "teMean": 0.0837,
+    "teStd": 0.0006,
+    "deadMean": 21,
+    "deadPct": 61.8
+  },
+  {
+    "dataset": "circle",
+    "reg": "L1",
+    "lr": 0.3,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.083",
+        "testStr": "0.132",
+        "trainLoss": 0.083,
+        "testLoss": 0.132,
+        "deadCount": 22,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.060",
+        "testStr": "0.111",
+        "trainLoss": 0.06,
+        "testLoss": 0.111,
+        "deadCount": 22,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.076",
+        "testStr": "0.142",
+        "trainLoss": 0.076,
+        "testLoss": 0.142,
+        "deadCount": 22,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.083",
+      "0.060",
+      "0.076"
+    ],
+    "testReadings": [
+      "0.132",
+      "0.111",
+      "0.142"
+    ],
+    "deadReadings": [
+      22,
+      22,
+      22
+    ],
+    "trMean": 0.073,
+    "trStd": 0.0118,
+    "teMean": 0.1283,
+    "teStd": 0.0158,
+    "deadMean": 22,
+    "deadPct": 64.7
+  },
+  {
+    "dataset": "circle",
+    "reg": "L2",
+    "lr": 0.003,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.046",
+        "testStr": "0.098",
+        "trainLoss": 0.046,
+        "testLoss": 0.098,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.033",
+        "testStr": "0.087",
+        "trainLoss": 0.033,
+        "testLoss": 0.087,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.031",
+        "testStr": "0.086",
+        "trainLoss": 0.031,
+        "testLoss": 0.086,
+        "deadCount": 0,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.046",
+      "0.033",
+      "0.031"
+    ],
+    "testReadings": [
+      "0.098",
+      "0.087",
+      "0.086"
+    ],
+    "deadReadings": [
+      0,
+      0,
+      0
+    ],
+    "trMean": 0.0367,
+    "trStd": 0.0081,
+    "teMean": 0.0903,
+    "teStd": 0.0067,
+    "deadMean": 0,
+    "deadPct": 0
+  },
+  {
+    "dataset": "circle",
+    "reg": "L2",
+    "lr": 0.03,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.032",
+        "testStr": "0.084",
+        "trainLoss": 0.032,
+        "testLoss": 0.084,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.032",
+        "testStr": "0.081",
+        "trainLoss": 0.032,
+        "testLoss": 0.081,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.032",
+        "testStr": "0.081",
+        "trainLoss": 0.032,
+        "testLoss": 0.081,
+        "deadCount": 0,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.032",
+      "0.032",
+      "0.032"
+    ],
+    "testReadings": [
+      "0.084",
+      "0.081",
+      "0.081"
+    ],
+    "deadReadings": [
+      0,
+      0,
+      0
+    ],
+    "trMean": 0.032,
+    "trStd": 0,
+    "teMean": 0.082,
+    "teStd": 0.0017,
+    "deadMean": 0,
+    "deadPct": 0
+  },
+  {
+    "dataset": "circle",
+    "reg": "L2",
+    "lr": 0.3,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.035",
+        "testStr": "0.115",
+        "trainLoss": 0.035,
+        "testLoss": 0.115,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.040",
+        "testStr": "0.082",
+        "trainLoss": 0.04,
+        "testLoss": 0.082,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.038",
+        "testStr": "0.107",
+        "trainLoss": 0.038,
+        "testLoss": 0.107,
+        "deadCount": 0,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.035",
+      "0.040",
+      "0.038"
+    ],
+    "testReadings": [
+      "0.115",
+      "0.082",
+      "0.107"
+    ],
+    "deadReadings": [
+      0,
+      0,
+      0
+    ],
+    "trMean": 0.0377,
+    "trStd": 0.0025,
+    "teMean": 0.1013,
+    "teStd": 0.0172,
+    "deadMean": 0,
+    "deadPct": 0
+  },
+  {
+    "dataset": "spiral",
+    "reg": "none",
+    "lr": 0.003,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.480",
+        "testStr": "0.453",
+        "trainLoss": 0.48,
+        "testLoss": 0.453,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.478",
+        "testStr": "0.451",
+        "trainLoss": 0.478,
+        "testLoss": 0.451,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.473",
+        "testStr": "0.445",
+        "trainLoss": 0.473,
+        "testLoss": 0.445,
+        "deadCount": 0,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.480",
+      "0.478",
+      "0.473"
+    ],
+    "testReadings": [
+      "0.453",
+      "0.451",
+      "0.445"
+    ],
+    "deadReadings": [
+      0,
+      0,
+      0
+    ],
+    "trMean": 0.477,
+    "trStd": 0.0036,
+    "teMean": 0.4497,
+    "teStd": 0.0042,
+    "deadMean": 0,
+    "deadPct": 0
+  },
+  {
+    "dataset": "spiral",
+    "reg": "none",
+    "lr": 0.03,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.473",
+        "testStr": "0.445",
+        "trainLoss": 0.473,
+        "testLoss": 0.445,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.298",
+        "testStr": "0.305",
+        "trainLoss": 0.298,
+        "testLoss": 0.305,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.272",
+        "testStr": "0.310",
+        "trainLoss": 0.272,
+        "testLoss": 0.31,
+        "deadCount": 0,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.473",
+      "0.298",
+      "0.272"
+    ],
+    "testReadings": [
+      "0.445",
+      "0.305",
+      "0.310"
+    ],
+    "deadReadings": [
+      0,
+      0,
+      0
+    ],
+    "trMean": 0.3477,
+    "trStd": 0.1093,
+    "teMean": 0.3533,
+    "teStd": 0.0794,
+    "deadMean": 0,
+    "deadPct": 0
+  },
+  {
+    "dataset": "spiral",
+    "reg": "none",
+    "lr": 0.3,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.326",
+        "testStr": "0.327",
+        "trainLoss": 0.326,
+        "testLoss": 0.327,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.444",
+        "testStr": "0.423",
+        "trainLoss": 0.444,
+        "testLoss": 0.423,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.410",
+        "testStr": "0.440",
+        "trainLoss": 0.41,
+        "testLoss": 0.44,
+        "deadCount": 0,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.326",
+      "0.444",
+      "0.410"
+    ],
+    "testReadings": [
+      "0.327",
+      "0.423",
+      "0.440"
+    ],
+    "deadReadings": [
+      0,
+      0,
+      0
+    ],
+    "trMean": 0.3933,
+    "trStd": 0.0607,
+    "teMean": 0.3967,
+    "teStd": 0.0609,
+    "deadMean": 0,
+    "deadPct": 0
+  },
+  {
+    "dataset": "spiral",
+    "reg": "L1",
+    "lr": 0.003,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.481",
+        "testStr": "0.457",
+        "trainLoss": 0.481,
+        "testLoss": 0.457,
+        "deadCount": 9,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.480",
+        "testStr": "0.457",
+        "trainLoss": 0.48,
+        "testLoss": 0.457,
+        "deadCount": 16,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.480",
+        "testStr": "0.456",
+        "trainLoss": 0.48,
+        "testLoss": 0.456,
+        "deadCount": 21,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.481",
+      "0.480",
+      "0.480"
+    ],
+    "testReadings": [
+      "0.457",
+      "0.457",
+      "0.456"
+    ],
+    "deadReadings": [
+      9,
+      16,
+      21
+    ],
+    "trMean": 0.4803,
+    "trStd": 0.0006,
+    "teMean": 0.4567,
+    "teStd": 0.0006,
+    "deadMean": 15,
+    "deadPct": 44.1
+  },
+  {
+    "dataset": "spiral",
+    "reg": "L1",
+    "lr": 0.03,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.480",
+        "testStr": "0.461",
+        "trainLoss": 0.48,
+        "testLoss": 0.461,
+        "deadCount": 25,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.480",
+        "testStr": "0.461",
+        "trainLoss": 0.48,
+        "testLoss": 0.461,
+        "deadCount": 28,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.480",
+        "testStr": "0.462",
+        "trainLoss": 0.48,
+        "testLoss": 0.462,
+        "deadCount": 28,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.480",
+      "0.480",
+      "0.480"
+    ],
+    "testReadings": [
+      "0.461",
+      "0.461",
+      "0.462"
+    ],
+    "deadReadings": [
+      25,
+      28,
+      28
+    ],
+    "trMean": 0.48,
+    "trStd": 0,
+    "teMean": 0.4613,
+    "teStd": 0.0006,
+    "deadMean": 27,
+    "deadPct": 79.4
+  },
+  {
+    "dataset": "spiral",
+    "reg": "L1",
+    "lr": 0.3,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.479",
+        "testStr": "0.461",
+        "trainLoss": 0.479,
+        "testLoss": 0.461,
+        "deadCount": 30,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.479",
+        "testStr": "0.461",
+        "trainLoss": 0.479,
+        "testLoss": 0.461,
+        "deadCount": 30,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.479",
+        "testStr": "0.461",
+        "trainLoss": 0.479,
+        "testLoss": 0.461,
+        "deadCount": 30,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.479",
+      "0.479",
+      "0.479"
+    ],
+    "testReadings": [
+      "0.461",
+      "0.461",
+      "0.461"
+    ],
+    "deadReadings": [
+      30,
+      30,
+      30
+    ],
+    "trMean": 0.479,
+    "trStd": 0,
+    "teMean": 0.461,
+    "teStd": 0,
+    "deadMean": 30,
+    "deadPct": 88.2
+  },
+  {
+    "dataset": "spiral",
+    "reg": "L2",
+    "lr": 0.003,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.481",
+        "testStr": "0.454",
+        "trainLoss": 0.481,
+        "testLoss": 0.454,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.480",
+        "testStr": "0.454",
+        "trainLoss": 0.48,
+        "testLoss": 0.454,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.479",
+        "testStr": "0.453",
+        "trainLoss": 0.479,
+        "testLoss": 0.453,
+        "deadCount": 0,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.481",
+      "0.480",
+      "0.479"
+    ],
+    "testReadings": [
+      "0.454",
+      "0.454",
+      "0.453"
+    ],
+    "deadReadings": [
+      0,
+      0,
+      0
+    ],
+    "trMean": 0.48,
+    "trStd": 0.001,
+    "teMean": 0.4537,
+    "teStd": 0.0006,
+    "deadMean": 0,
+    "deadPct": 0
+  },
+  {
+    "dataset": "spiral",
+    "reg": "L2",
+    "lr": 0.03,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.479",
+        "testStr": "0.455",
+        "trainLoss": 0.479,
+        "testLoss": 0.455,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.478",
+        "testStr": "0.455",
+        "trainLoss": 0.478,
+        "testLoss": 0.455,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.478",
+        "testStr": "0.456",
+        "trainLoss": 0.478,
+        "testLoss": 0.456,
+        "deadCount": 0,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.479",
+      "0.478",
+      "0.478"
+    ],
+    "testReadings": [
+      "0.455",
+      "0.455",
+      "0.456"
+    ],
+    "deadReadings": [
+      0,
+      0,
+      0
+    ],
+    "trMean": 0.4783,
+    "trStd": 0.0006,
+    "teMean": 0.4553,
+    "teStd": 0.0006,
+    "deadMean": 0,
+    "deadPct": 0
+  },
+  {
+    "dataset": "spiral",
+    "reg": "L2",
+    "lr": 0.3,
+    "regRate": 0.003,
+    "seedDetails": [
+      {
+        "seed": "0.42",
+        "trainStr": "0.479",
+        "testStr": "0.458",
+        "trainLoss": 0.479,
+        "testLoss": 0.458,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.101",
+        "trainStr": "0.479",
+        "testStr": "0.458",
+        "trainLoss": 0.479,
+        "testLoss": 0.458,
+        "deadCount": 0,
+        "totalWeights": 34
+      },
+      {
+        "seed": "0.2024",
+        "trainStr": "0.479",
+        "testStr": "0.458",
+        "trainLoss": 0.479,
+        "testLoss": 0.458,
+        "deadCount": 0,
+        "totalWeights": 34
+      }
+    ],
+    "trainReadings": [
+      "0.479",
+      "0.479",
+      "0.479"
+    ],
+    "testReadings": [
+      "0.458",
+      "0.458",
+      "0.458"
+    ],
+    "deadReadings": [
+      0,
+      0,
+      0
+    ],
+    "trMean": 0.479,
+    "trStd": 0,
+    "teMean": 0.458,
+    "teStd": 0,
+    "deadMean": 0,
+    "deadPct": 0
+  }
+]
