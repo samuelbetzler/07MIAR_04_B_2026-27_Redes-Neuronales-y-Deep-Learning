@@ -16,10 +16,9 @@ function resolveChromePath() {
   } catch (err) {}
 
   const candidates = [
-    'C:\\Users\\samue\\.cache\\puppeteer\\chrome-headless-shell\\win64-131.0.6778.204\\chrome-headless-shell-win64\\chrome-headless-shell.exe',
     'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
     'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
-    process.env.LOCALAPPDATA + '\\Google\\Chrome\\Application\\chrome.exe',
+    (process.env.LOCALAPPDATA || '') + '\\Google\\Chrome\\Application\\chrome.exe',
     '/usr/bin/google-chrome',
     '/usr/bin/chromium-browser',
     '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
@@ -28,11 +27,15 @@ function resolveChromePath() {
   for (const c of candidates) {
     if (c && fs.existsSync(c)) return c;
   }
-  throw new Error("No se encontró ningún binario de Chrome/Chromium. Ejecute 'npm install puppeteer' o defina PUPPETEER_EXECUTABLE_PATH.");
+  return undefined; // Permite que puppeteer use el binario descargado por npm install puppeteer
 }
 
 const chromePath = resolveChromePath();
-console.log('Utilizando ejecutable de Chrome:', chromePath);
+if (chromePath) {
+  console.log('Utilizando ejecutable de Chrome detectado:', chromePath);
+} else {
+  console.log('Utilizando navegador Chromium integrado por Puppeteer.');
+}
 
 const datasets = ['circle', 'spiral'];
 const regularizers = ['none', 'L1', 'L2'];
@@ -126,11 +129,14 @@ async function runSingle(browser, exp) {
 
 async function runBenchmark() {
   console.log(`Iniciando ejecución automatizada de 54 experimentos sobre TensorFlow Playground...`);
-  const browser = await puppeteer.launch({
-    executablePath: chromePath,
-    headless: true,
+  const launchOptions = {
+    headless: 'new',
     args: ['--no-sandbox', '--disable-setuid-sandbox']
-  });
+  };
+  if (chromePath) {
+    launchOptions.executablePath = chromePath;
+  }
+  const browser = await puppeteer.launch(launchOptions);
 
   const allResults = [];
   for (const exp of experiments) {
