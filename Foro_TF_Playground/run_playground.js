@@ -1,13 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-// Auto-detect Puppeteer or Puppeteer-core
-let puppeteer;
-try {
-  puppeteer = require('puppeteer');
-} catch (e) {
-  puppeteer = require('puppeteer-core');
-}
+const puppeteer = require('puppeteer');
 
 // Auto-resolve Chrome/Chromium executable
 function resolveChromePath() {

@@ -7,7 +7,6 @@
     "start": "node run_playground.js"
   },
   "dependencies": {
-    "puppeteer": "^24.0.0",
-    "puppeteer-core": "^24.0.0"
+    "puppeteer": "^24.0.0"
   }
 }
