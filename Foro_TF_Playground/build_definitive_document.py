@@ -110,7 +110,7 @@ html_content = f"""<!DOCTYPE html>
 <style>
   @page {{
     size: A4;
-    margin: 1.20cm 1.38cm 1.20cm 1.38cm;
+    margin: 1.18cm 1.35cm 1.18cm 1.35cm;
   }}
   * {{
     box-sizing: border-box;
@@ -119,8 +119,8 @@ html_content = f"""<!DOCTYPE html>
     font-family: 'Lora', 'Georgia', serif;
     font-variant-ligatures: none;
     color: #2c3e50;
-    line-height: 1.32;
-    font-size: 8.25pt;
+    line-height: 1.31;
+    font-size: 8.2pt;
     max-width: 820px;
     margin: 0 auto;
     padding: 0;
@@ -476,13 +476,13 @@ html_content = f"""<!DOCTYPE html>
 
   <h2>4. Discusión Crítica: Dinámica de Poda y Límites de Capacidad</h2>
   <p>
-    <b>1. Dinámica de Poda y Saturación en L<sub>1</sub>:</b> Sin gradiente, un enlace muere si |<i>w</i><sub>0</sub>| &lt; &alpha;&lambda;T; al inicializar en <i>w</i><sub>0</sub> &sim; <i>U</i>[&minus;0.5, 0.5], esto ocurre con probabilidad teórica base &alpha;&lambda;T / 0.5 = 36% (&asymp;12 de 34 enlaces). Esta estimación sirve como línea base teórica ante ausencia de señal, no como una cota estricta: en Spiral, donde la red queda atascada en meseta sin gradientes útiles sostenidos, se observan [9, 16, 21] enlaces muertos (media 45%), del mismo orden de magnitud ante <i>n</i> = 3; mientras que en Circle el gradiente activo protege la conectividad, reduciendo los muertos a solo 5.7 (16.7%). A &alpha; = 0.03, la desconexión selectiva consolida una subred esparsa viable (21.3 muertos, test 0.0837 &plusmn; 0.0006). A &alpha; = 0.3, la cifra de enlaces muertos se mantiene similar (22.0 vs. 21.3); por tanto, el número agregado de enlaces muertos no explica por sí solo la degradación del error a 0.1283, la cual responde primordialmente al sobrepaso de gradiente (<i>overshooting</i>) propio de un paso agresivo con <i>B</i> = 10, patente también en None (0.1163) y L<sub>2</sub> (0.1013) [1, 3].
+    <b>1. Dinámica de Poda y Línea Base L<sub>1</sub>:</b> Sin gradiente, un enlace muere si |<i>w</i><sub>0</sub>| &lt; &alpha;&lambda;T; al inicializar en <i>w</i><sub>0</sub> &sim; <i>U</i>[&minus;0.5, 0.5], esto ocurre con probabilidad teórica base &alpha;&lambda;T / 0.5 = 36% (&asymp;12 de 34 enlaces). Esta estimación sirve como línea base teórica ante ausencia de señal, no como cota estricta: en Spiral, donde la red queda atascada en meseta sin gradientes útiles sostenidos, se observan [9, 16, 21] enlaces muertos (media 45%), del mismo orden de magnitud ante <i>n</i> = 3; mientras que en Circle el gradiente activo protege la conectividad, reduciendo los muertos a solo 5.7 (16.7%). A &alpha; = 0.03, la desconexión selectiva consolida una subred esparsa viable (21.3 muertos, test 0.0837 &plusmn; 0.0006). A &alpha; = 0.3, la cifra de enlaces muertos se mantiene similar (22.0 vs. 21.3); por tanto, el número agregado de enlaces muertos no explica por sí solo la degradación del error a 0.1283, la cual responde al sobrepaso de gradiente (<i>overshooting</i>) propio de un paso agresivo con <i>B</i> = 10, patente también en None (0.1163) y L<sub>2</sub> (0.1013) [1, 3].
   </p>
   <p>
-    <b>2. L<sub>2</sub> como Regularizador Continuo vs. L<sub>1</sub>:</b> L<sub>2</sub> (&alpha;=0.03, test 0.0820 &plusmn; 0.0017) empata en capacidad predictiva con L<sub>1</sub> conservador (0.0763 &plusmn; 0.0074), superando a None (0.0997 &plusmn; 0.0045). L<sub>2</sub> preserva la totalidad de los enlaces (0/34 muertos), atenuando la varianza de los pesos sin truncamiento. Debe precisarse que la esparsidad no estructurada de L<sub>1</sub> requiere bibliotecas de cómputo disperso para traducirse en aceleración real en hardware, y que con <i>n</i> = 3 la menor dispersión observada en L<sub>2</sub> es un indicador muestral sujeto a variabilidad estocástica [3].
+    <b>2. L<sub>2</sub> Continuo y Diagnóstico de la Brecha Train-Test:</b> L<sub>2</sub> (&alpha;=0.03, test 0.0820 &plusmn; 0.0017) empata en generalización con L<sub>1</sub> conservador (0.0763 &plusmn; 0.0074), superando a None (0.0997 &plusmn; 0.0045) y preservando todos los enlaces (0/34 muertos). Resulta revelador analizar la <i>brecha de generalización</i> (test &minus; train): en un modelo de 45 parámetros entrenables (34 pesos, 11 sesgos), la red sin regularizar sobreajusta el ruido ambiental del 10%, exhibiendo una brecha de 0.068&ndash;0.077 donde la pérdida de test triplica a la de train. Ambos regularizadores comprimen notablemente dicha brecha en todos los &alpha; (L<sub>1</sub>: 0.039&ndash;0.055; L<sub>2</sub>: 0.050&ndash;0.064), confirmando empíricamente el mecanismo de mitigación de varianza. La esparsidad no estructurada de L<sub>1</sub> requiere librerías dispersas para aceleración real, y ante <i>n</i> = 3 la dispersión de L<sub>2</sub> es un indicador muestral [3].
   </p>
   <p>
-    <b>3. Subajuste Estructural en Spiral:</b> En Spiral, un clasificador constante en 0 rinde una pérdida cuadrática teórica de 0.500. En este montaje experimental (entradas <i>X</i><sub>1</sub>, <i>X</i><sub>2</sub> puras y red 4-4-2), las variantes con regularización (L<sub>1</sub>, L<sub>2</sub>) quedan atrapadas en valores próximos a dicho límite (0.453&ndash;0.461). A &alpha; = 0.003, todas las arquitecturas (incluida None con 0.4497) permanecen en meseta. En cambio, sin regularizar, semillas con pasos más ágiles escapan a la simetría nula trazando planos de corte que reducen la pérdida (None &alpha;=0.03 en s<sub>2</sub>, s<sub>3</sub> con 0.305 y 0.310; y None &alpha;=0.3 en s<sub>1</sub> con 0.327). Esto <b>sugiere</b> que en este montaje, la penalización de pesos agrava el subajuste cuando el modelo carece de la capacidad inductiva necesaria para resolver la geometría [3].
+    <b>3. Subajuste Estructural en Spiral:</b> En Spiral, un clasificador constante en 0 rinde una pérdida cuadrática de 0.500. En este montaje experimental (entradas <i>X</i><sub>1</sub>, <i>X</i><sub>2</sub> puras y red 4-4-2), las variantes con regularización (L<sub>1</sub>, L<sub>2</sub>) quedan atrapadas en valores próximos a dicho límite (0.453&ndash;0.461). A &alpha; = 0.003, todas las arquitecturas (incluida None con 0.4497) permanecen en meseta. En cambio, sin regularizar, semillas con pasos más ágiles escapan a la simetría nula trazando planos de corte que reducen la pérdida (None &alpha;=0.03 en s<sub>2</sub>, s<sub>3</sub> con 0.305 y 0.310; y None &alpha;=0.3 en s<sub>1</sub> con 0.327). Esto <b>sugiere</b> que en este montaje, la penalización de pesos agrava el subajuste cuando el modelo carece de la capacidad inductiva necesaria para resolver la geometría [3].
   </p>
 </div>
 
