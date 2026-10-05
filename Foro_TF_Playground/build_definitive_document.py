@@ -20,7 +20,9 @@ with open(shot_circle, "rb") as f:
 with open(shot_spiral, "rb") as f:
     shot_spiral_b64 = base64.b64encode(f.read()).decode("utf-8")
 
-with open(os.path.join(base_dir, "definitive_benchmark_results.json")) as f:
+# Única fuente canónica de datos
+json_canonical = os.path.join(base_dir, "resultados_brutos.json")
+with open(json_canonical, encoding="utf-8") as f:
     bench_data = json.load(f)
 
 def generate_table_rows(dataset_name):
@@ -407,7 +409,7 @@ html_content = f"""<!DOCTYPE html>
 
   <h2>2. Protocolo Experimental y Rejilla 3&times;3 en Dataset Circle</h2>
   <p>
-    Conforme a la <b>Norma 3</b>, se fija una red de 3 capas ocultas <b>[4, 4, 2]</b> (topología <code>2 &rarr; 4 &rarr; 4 &rarr; 2 &rarr; 1</code>), con <b>34 pesos entrenables</b> y 11 sesgos no regularizados. Entradas: coordenadas (<i>X</i><sub>1</sub>, <i>X</i><sub>2</sub>); Activación: Tanh; Ruido: 10%; Split: 80% train / 20% test (400/100 muestras, <b>Norma 2</b>); &lambda; = 0.003. Se evalúan 3 semillas pseudoaleatorias controladas (<i>s</i> &isin; {{0.42, 0.101, 0.2024}}). Para garantizar reproducibilidad y auditoría estricta de la <b>Norma 1</b>, la aplicación web oficial (<code>playground.tensorflow.org</code>) fue ejecutada mediante Puppeteer en Chromium sin modificar el código de la plataforma. El entrenamiento se ejecuta controlando exactamente 500 épocas (500 pulsaciones secuenciales del botón <code>#next-step-button</code> tras cargar los hiperparámetros en la URL), extrayéndose las lecturas de los elementos <code>#loss-train</code> y <code>#loss-test</code> a 3 decimales, reportando la media muestral &mu; y la desviación estándar muestral &sigma; (<i>n</i> &minus; 1 grados de libertad). La esparsidad se midió inspeccionando la propiedad <code>__data__</code> asociada por D3.js a cada trazado SVG (<code>&lt;path id^="link"&gt;</code>) para acceder al atributo nativo <code>link.isDead === true</code> (ver volcado JSON en el repositorio público). En configuraciones saturadas se observan coincidencias entre semillas (e.g., train 0.035 en L<sub>1</sub> o <i>k</i> = [22, 22, 22]), compatibles con la resolución nativa de 3 decimales y convergencia hacia idénticos subconjuntos de conexiones viables.
+    Conforme a la <b>Norma 3</b>, se fija una red de 3 capas ocultas <b>[4, 4, 2]</b> (topología <code>2 &rarr; 4 &rarr; 4 &rarr; 2 &rarr; 1</code>), con <b>34 pesos entrenables</b> y 11 sesgos no regularizados. Entradas: coordenadas (<i>X</i><sub>1</sub>, <i>X</i><sub>2</sub>); Activación: Tanh; Ruido: 10%; Split: 80% train / 20% test (400/100 muestras, <b>Norma 2</b>); &lambda; = 0.003. Se evalúan 3 semillas pseudoaleatorias controladas (<i>s</i> &isin; {{0.42, 0.101, 0.2024}}). Para garantizar reproducibilidad y auditoría estricta de la <b>Norma 1</b>, la aplicación web oficial (<code>playground.tensorflow.org</code>) fue ejecutada mediante Puppeteer en Chromium sin modificar el código de la plataforma. El entrenamiento se ejecuta controlando exactamente 500 épocas (500 pulsaciones secuenciales del botón <code>#next-step-button</code> tras cargar los hiperparámetros en la URL), extrayéndose las lecturas de los elementos <code>#loss-train</code> y <code>#loss-test</code> a 3 decimales, reportando la media muestral &mu; y la desviación estándar muestral &sigma; (<i>n</i> &minus; 1 grados de libertad). La esparsidad se midió inspeccionando la propiedad <code>__data__</code> asociada por D3.js a cada trazado SVG (<code>&lt;path id^="link"&gt;</code>) para acceder al atributo nativo <code>link.isDead === true</code> (ver volcado JSON en el repositorio público). En configuraciones saturadas se observan coincidencias entre semillas (e.g., train 0.035 en L<sub>1</sub> o <i>k</i> = [22, 22, 22]), compatibles con la resolución nativa de 3 decimales y convergencia hacia niveles equivalentes de esparsidad en la muestra evaluada.
   </p>
 
   <div class="caption">Tabla 1. Mediciones directas en interfaz de TensorFlow Playground &mdash; Dataset Circle (Ruido 10%, 500 épocas, n=3 semillas)</div>
@@ -433,7 +435,7 @@ html_content = f"""<!DOCTYPE html>
     <img src="data:image/png;base64,{shot_circle_b64}" alt="Circle L2 Playground">
     <div class="figure-caption">
       <b>Figura 1. Captura de ejecución en TensorFlow Playground (Circle, L<sub>2</sub>, &alpha;=0.03, semilla 0.42, 500 épocas).</b><br>
-      Evidencia visual completa de los parámetros fijados en el panel DATA (split 80/20, ruido 10%, batch 10, red [4, 4, 2] con &tanh;) y superficie de separación concéntrica regular frente al ruido (test loss visible: 0.084, train loss: 0.032, 0/34 enlaces muertos).
+      Parámetros fijados en el panel DATA (split 80/20, ruido 10%, batch 10, red [4, 4, 2] con tanh) y superficie de separación concéntrica regular frente al ruido (test loss visible: 0.084, train loss: 0.032, 0/34 enlaces muertos).
     </div>
   </div>
 </div>
@@ -468,7 +470,7 @@ html_content = f"""<!DOCTYPE html>
     <img src="data:image/png;base64,{shot_spiral_b64}" alt="Spiral None Playground">
     <div class="figure-caption">
       <b>Figura 2. Captura de ejecución en TensorFlow Playground (Spiral, None, &alpha;=0.03, semilla s<sub>1</sub>=0.42, 500 épocas).</b><br>
-      Refleja el estancamiento en un único plano de corte oblicuo que biseca el espacio (test loss: 0.445, train loss: 0.473). Con 34 pesos y coordenadas puras (<i>X</i><sub>1</sub>, <i>X</i><sub>2</sub>), la red carece de capacidad inductiva para envolver las espirales.
+      Muestra la semilla s<sub>1</sub>, estancada casi sin separación efectiva entre clases (test loss: 0.445, train loss: 0.473). Con 34 pesos y coordenadas puras (<i>X</i><sub>1</sub>, <i>X</i><sub>2</sub>), la red carece de capacidad inductiva para resolver las espirales.
     </div>
   </div>
 
@@ -480,7 +482,7 @@ html_content = f"""<!DOCTYPE html>
     <b>2. L<sub>2</sub> como Regularizador Continuo vs. L<sub>1</sub>:</b> L<sub>2</sub> (&alpha;=0.03, test 0.0820 &plusmn; 0.0017) empata en capacidad predictiva con L<sub>1</sub> conservador (0.0763 &plusmn; 0.0074), superando a None (0.0997 &plusmn; 0.0045). L<sub>2</sub> preserva la totalidad de los enlaces (0/34 muertos), atenuando la varianza de los pesos sin truncamiento. Debe precisarse que la esparsidad no estructurada de L<sub>1</sub> requiere bibliotecas de cómputo disperso para traducirse en aceleración real en hardware, y que con <i>n</i> = 3 la menor dispersión observada en L<sub>2</sub> es un indicador muestral sujeto a variabilidad estocástica [3].
   </p>
   <p>
-    <b>3. Subajuste Estructural en Spiral:</b> En Spiral, un clasificador constante en 0 rinde una pérdida cuadrática teórica de 0.500. En este montaje experimental (entradas <i>X</i><sub>1</sub>, <i>X</i><sub>2</sub> puras y red 4-4-2), las variantes con regularización (L<sub>1</sub>, L<sub>2</sub>) quedan atrapadas en valores próximos a dicho límite (0.453&ndash;0.461). A &alpha; = 0.003, todas las arquitecturas (incluida None con 0.4497) permanecen en meseta. En cambio, sin regularizar, semillas con pasos más ágiles escapan a la simetría nula trazando planos de corte que reducen la pérdida (None &alpha;=0.03 en s<sub>2</sub>, s<sub>3</sub> con 0.305 y 0.310; y None &alpha;=0.3 en s<sub>1</sub> con 0.327). Esto evidencia que <i>en este montaje, la penalización de pesos agrava el subajuste cuando el modelo carece de la capacidad inductiva necesaria para resolver la geometría</i> [3].
+    <b>3. Subajuste Estructural en Spiral:</b> En Spiral, un clasificador constante en 0 rinde una pérdida cuadrática teórica de 0.500. En este montaje experimental (entradas <i>X</i><sub>1</sub>, <i>X</i><sub>2</sub> puras y red 4-4-2), las variantes con regularización (L<sub>1</sub>, L<sub>2</sub>) quedan atrapadas en valores próximos a dicho límite (0.453&ndash;0.461). A &alpha; = 0.003, todas las arquitecturas (incluida None con 0.4497) permanecen en meseta. En cambio, sin regularizar, semillas con pasos más ágiles escapan a la simetría nula trazando planos de corte que reducen la pérdida (None &alpha;=0.03 en s<sub>2</sub>, s<sub>3</sub> con 0.305 y 0.310; y None &alpha;=0.3 en s<sub>1</sub> con 0.327). Esto <b>sugiere</b> que en este montaje, la penalización de pesos agrava el subajuste cuando el modelo carece de la capacidad inductiva necesaria para resolver la geometría [3].
   </p>
 </div>
 
@@ -524,7 +526,7 @@ html_content = f"""<!DOCTYPE html>
         <td><b>Variedades entrelazadas de alta curvatura (Spiral)</b></td>
         <td>No regularizar en baja capacidad inductiva</td>
         <td>None (&alpha;=0.03) como base de optimización</td>
-        <td>En este montaje, regularizar refuerza el subajuste (pérdidas &asymp; 0.45&ndash;0.46). Como hipótesis a contrastar en trabajo futuro, se requeriría ampliar arquitectura o proyectar a base armónica (sin/cos).</td>
+        <td>En este montaje, regularizar parece reforzar el subajuste (pérdidas &asymp; 0.45&ndash;0.46). Como hipótesis a contrastar en trabajo futuro, se requeriría ampliar arquitectura o proyectar a base armónica (sin/cos).</td>
       </tr>
     </tbody>
   </table>
@@ -535,7 +537,7 @@ html_content = f"""<!DOCTYPE html>
 
   <h2>6. Reproducibilidad y Código Abierto</h2>
   <p style="font-size: 7.1pt; margin-bottom: 3px;">
-    Todas las evaluaciones fueron ejecutadas y capturadas sobre la aplicación web oficial de TensorFlow Playground (https://playground.tensorflow.org) en el motor Chromium mediante automatización en Puppeteer, registrando las lecturas directas del panel (#loss-train y #loss-test) e inspeccionando el estado interno de los enlaces (<code>isDead</code> y <code>weight</code>) mediante el enlace de datos de D3.js. El código ejecutor (<code>run_playground.js</code>), el registro bruto de las 54 ejecuciones (<code>resultados_brutos.csv</code> con enlaces muertos y URLs directas), el volcado JSON (<code>links_isDead_run.json</code>) y las capturas íntegras se encuentran publicados de forma abierta en:
+    Todas las evaluaciones fueron ejecutadas y capturadas sobre la aplicación web oficial de TensorFlow Playground (https://playground.tensorflow.org) en el motor Chromium mediante automatización en Puppeteer, registrando las lecturas directas del panel (#loss-train y #loss-test) e inspeccionando el estado interno de los enlaces (<code>isDead</code> y <code>weight</code>) mediante el enlace de datos de D3.js. El código ejecutor (<code>run_playground.js</code>), el registro bruto de las 54 ejecuciones (<code>resultados_brutos.csv</code> con enlaces muertos, marcas temporales y URLs directas), el volcado JSON (<code>links_isDead_run.json</code>) y las capturas íntegras se encuentran depositados en:
     <br><code style="font-family: 'JetBrains Mono', monospace; font-size: 6.8pt; color: #2980b9; word-break: break-all;">https://github.com/samuelbetzler/07MIAR_04_B_2026-27_Redes-Neuronales-y-Deep-Learning</code>
     <br>Estado base verificable para la semilla 0.42:
     <br><code style="font-family: 'JetBrains Mono', monospace; font-size: 6.1pt; color: #7f8c8d; word-break: break-all;">https://playground.tensorflow.org/#activation=tanh&amp;regularization=L2&amp;batchSize=10&amp;dataset=circle&amp;learningRate=0.03&amp;regularizationRate=0.003&amp;noise=10&amp;networkShape=4,4,2&amp;seed=0.42&amp;percTrainData=80&amp;x=true&amp;y=true</code>
@@ -546,7 +548,7 @@ html_content = f"""<!DOCTYPE html>
     <p>[1] Tibshirani, R. (1996). <i>Regression shrinkage and selection via the lasso</i>. Journal of the Royal Statistical Society: Series B (Methodological), 58(1), 267&ndash;288.</p>
     <p>[2] Smilkov, D., Carter, S., Sculley, D., Vi&eacute;gas, F. B., &amp; Wattenberg, M. (2017). <i>Direct-manipulation visualization of deep networks</i>. arXiv preprint arXiv:1708.03788 (presentado en ICML Workshop on Visualization for Deep Learning).</p>
     <p>[3] Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <i>Deep Learning</i>. MIT Press. Capítulo 7: Regularization for Deep Learning (pp. 224&ndash;270).</p>
-    <p>[4] TensorFlow Playground. (2016). <i>Repositorio oficial de código abierto</i>. Google Inc. Disponible en: https://github.com/tensorflow/playground. Regla de desconexión y cruce por cero implementada en <code>src/nn.ts</code> (commit <code>7c7cf58</code>, marzo de 2017). Consulta: 4 de octubre de 2026.</p>
+    <p>[4] TensorFlow Playground. (2016). <i>Repositorio oficial de código abierto</i>. Google Inc. Disponible en: https://github.com/tensorflow/playground. Regla de desconexión y cruce por cero implementada en <code>src/nn.ts</code> (commit <code>bd89e3a</code>, 8 de marzo de 2017). Consulta: 4 de octubre de 2026.</p>
   </div>
 </div>
 
