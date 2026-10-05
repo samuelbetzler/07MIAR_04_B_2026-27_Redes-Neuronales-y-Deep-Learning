@@ -507,26 +507,26 @@ html_content = f"""<!DOCTYPE html>
       <tr>
         <td><b>Fronteras radiales convexas con ruido moderado (Circle)</b></td>
         <td>L<sub>2</sub> continuo o L<sub>1</sub> conservador</td>
-        <td>L<sub>2</sub> (&alpha;=0.03, &lambda;=0.003) &oacute; L<sub>1</sub> (&alpha;=0.003)</td>
-        <td>Desempeño equivalente (test 0.076&ndash;0.082 frente a 0.100 en None). L<sub>1</sub> poda el 16.7% de enlaces; L<sub>2</sub> preserva conectividad completa sin desconexiones.</td>
+        <td>L<sub>2</sub> (&alpha;=0.03, &lambda;=0.003) &middot; L<sub>1</sub> (&alpha;=0.003, &lambda;=0.003)</td>
+        <td>Desempeño equivalente (test 0.076&ndash;0.082 frente a 0.0997 en None). L<sub>1</sub> poda el 16.7% de enlaces; L<sub>2</sub> preserva conectividad completa sin desconexiones.</td>
       </tr>
       <tr>
         <td><b>Poda estructural deliberada / Compresión de red (Circle)</b></td>
         <td>L<sub>1</sub> con &alpha; moderado</td>
         <td>L<sub>1</sub> (&alpha;=0.03, &lambda;=0.003)</td>
-        <td>Poda 21.3/34 enlaces (62.7% de esparsidad no estructurada) manteniendo test competitivo (0.0837 &plusmn; 0.0006) por gradiente fuerte en enlaces activos (requiere kernels dispersos para acelerar cómputo).</td>
+        <td>Poda 21.3/34 enlaces (62.7% de esparsidad no estructurada) con test competitivo (0.0837 &plusmn; 0.0006); consistente con enlaces activos de gradiente fuerte. Requiere kernels dispersos para acelerar cómputo.</td>
       </tr>
       <tr>
         <td><b>Tasas de aprendizaje agresivas (&alpha; = 0.3)</b></td>
-        <td>Evitar &alpha; &ge; 0.3 en Circle</td>
-        <td>General a todos los regularizadores</td>
-        <td>El sobrepaso estocástico degrada la convergencia en todos los casos (None 0.1163, L<sub>2</sub> 0.1013, L<sub>1</sub> 0.1283). En L<sub>1</sub>, la pérdida no obedece a un salto sustancial de poda (22.0 vs. 21.3) sino a inestabilidad.</td>
+        <td>Evitar &alpha; = 0.3 en Circle (no se probó &alpha; &gt; 0.3)</td>
+        <td>Evaluado a &alpha;=0.3 en todas las variantes</td>
+        <td>Empeora el test en L<sub>1</sub> (0.0837&rarr;0.1283, 3/3 semillas), en L<sub>2</sub> (0.0820&rarr;0.1013, 2/3) y de forma inconsistente en None (0.0997&rarr;0.1163, solo s<sub>3</sub>). Coherente con sobrepaso de gradiente; en L<sub>1</sub> la poda es similar (22.0 vs 21.3).</td>
       </tr>
       <tr>
         <td><b>Variedades entrelazadas de alta curvatura (Spiral)</b></td>
-        <td>No regularizar en baja capacidad inductiva</td>
-        <td>None (&alpha;=0.03) como base de optimización</td>
-        <td>En este montaje, regularizar parece reforzar el subajuste (pérdidas &asymp; 0.45&ndash;0.46). Como hipótesis a contrastar en trabajo futuro, se requeriría ampliar arquitectura o proyectar a base armónica (sin/cos).</td>
+        <td>None (&alpha;=0.03) como base; ampliar capacidad = hipótesis</td>
+        <td>None (&alpha;=0.03) evaluado</td>
+        <td>En este montaje (4-4-2, entradas <i>X</i><sub>1</sub>, <i>X</i><sub>2</sub>), L<sub>1</sub>/L<sub>2</sub> quedan en ~0.45&ndash;0.46 y regularizar parece reforzar el subajuste. Sin regularizar, 2 de 3 semillas bajan a &asymp;0.31; sin&middot;cos y más capacidad no se probaron.</td>
       </tr>
     </tbody>
   </table>

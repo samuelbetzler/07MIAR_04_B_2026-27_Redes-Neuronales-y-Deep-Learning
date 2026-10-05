@@ -151,26 +151,26 @@ const path = require('path');
       <tr>
         <td><b>Fronteras radiales convexas con ruido moderado (Circle)</b></td>
         <td><span class="badge-blue">L₂ continuo o L₁ conservador</span></td>
-        <td><span class="code">L₂ (α=0.03, λ=0.003)</span><br><span class="code">L₁ (α=0.003)</span></td>
-        <td>Desempeño equivalente (test 0.076–0.082 vs 0.100 en None). L₁ poda el 16.7% de enlaces; L₂ preserva conectividad completa sin desconexiones.</td>
+        <td><span class="code">L₂ (α=0.03, λ=0.003)</span><br><span class="code">L₁ (α=0.003, λ=0.003)</span></td>
+        <td>Desempeño equivalente (test 0.076–0.082 vs 0.0997 en None). L₁ poda el 16.7% de enlaces; L₂ preserva conectividad completa sin desconexiones.</td>
       </tr>
       <tr>
         <td><b>Poda estructural deliberada / Compresión de red (Circle)</b></td>
         <td><span class="badge-purple">L₁ con α moderado</span></td>
         <td><span class="code">L₁ (α=0.03, λ=0.003)</span></td>
-        <td>Poda 21.3/34 enlaces (62.7% esparsidad) manteniendo test competitivo (0.0837 ± 0.0006) por gradiente fuerte en enlaces activos.</td>
+        <td>Poda 21.3/34 enlaces (62.7% de esparsidad no estructurada) con test competitivo (0.0837 ± 0.0006); consistente con enlaces activos de gradiente fuerte. Requiere kernels dispersos para acelerar cómputo.</td>
       </tr>
       <tr>
         <td><b>Tasas de aprendizaje agresivas (α = 0.3)</b></td>
-        <td><span class="badge-amber">Evitar α ≥ 0.3 en Circle</span></td>
-        <td>General a todos los regularizadores</td>
-        <td>Sobrepaso estocástico degrada la convergencia (None 0.1163, L₂ 0.1013, L₁ 0.1283). En L₁, responde a inestabilidad y no a mayor poda (22.0 vs 21.3).</td>
+        <td><span class="badge-amber">Evitar α = 0.3 en Circle (no se probó α &gt; 0.3)</span></td>
+        <td>Evaluado a α=0.3 en todas las variantes</td>
+        <td>Empeora el test en L₁ (0.0837&rarr;0.1283, 3/3 semillas), en L₂ (0.0820&rarr;0.1013, 2/3) y de forma inconsistente en None (0.0997&rarr;0.1163, solo s₃). Coherente con sobrepaso de gradiente; en L₁ la poda es similar (22.0 vs 21.3).</td>
       </tr>
       <tr>
         <td><b>Variedades entrelazadas de alta curvatura (Spiral)</b></td>
-        <td><span class="badge-slate">None (o expandir capacidad)</span></td>
-        <td><span class="code">None (α=0.03)</span> como base</td>
-        <td>En baja capacidad inductiva (4-4-2 pura), regularizar refuerza el subajuste (pérdidas ~0.45–0.46). Sin regularizar, semillas favorables bajan a 0.30–0.32.</td>
+        <td><span class="badge-slate">None (α=0.03) como base; ampliar capacidad = hipótesis</span></td>
+        <td><span class="code">None (α=0.03)</span> evaluado</td>
+        <td>En este montaje (4-4-2, entradas X₁, X₂), L₁/L₂ quedan en ~0.45–0.46 y regularizar parece reforzar el subajuste. Sin regularizar, 2 de 3 semillas bajan a ≈0.31; sin&middot;cos y más capacidad no se probaron.</td>
       </tr>
     </tbody>
   </table>
