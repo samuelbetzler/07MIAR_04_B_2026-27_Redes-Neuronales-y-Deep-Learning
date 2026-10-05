@@ -164,7 +164,7 @@ const path = require('path');
         <td><b>Tasas de aprendizaje agresivas (α = 0.3)</b></td>
         <td><span class="badge-amber">Evitar α = 0.3 en Circle (no se probó α &gt; 0.3)</span></td>
         <td>Evaluado a α=0.3 en todas las variantes</td>
-        <td>Empeora el test en L₁ (0.0837&rarr;0.1283, 3/3 semillas), en L₂ (0.0820&rarr;0.1013, 2/3) y de forma inconsistente en None (0.0997&rarr;0.1163, solo s₃). Coherente con sobrepaso de gradiente; en L₁ la poda es similar (22.0 vs 21.3).</td>
+        <td>Empeora el test en L₁ (0.0837&rarr;0.1283; +0.027 a +0.058 en las 3 semillas), en L₂ (0.0820&rarr;0.1013; +0.026 y +0.031 en 2 de 3 semillas) y en None solo por s₃ (0.0997&rarr;0.1163; +0.051). Coherente con sobrepaso de gradiente; en L₁ la poda es similar (22.0 vs 21.3).</td>
       </tr>
       <tr>
         <td><b>Variedades entrelazadas de alta curvatura (Spiral)</b></td>

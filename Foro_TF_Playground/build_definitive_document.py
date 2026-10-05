@@ -520,7 +520,7 @@ html_content = f"""<!DOCTYPE html>
         <td><b>Tasas de aprendizaje agresivas (&alpha; = 0.3)</b></td>
         <td>Evitar &alpha; = 0.3 en Circle (no se probó &alpha; &gt; 0.3)</td>
         <td>Evaluado a &alpha;=0.3 en todas las variantes</td>
-        <td>Empeora el test en L<sub>1</sub> (0.0837&rarr;0.1283, 3/3 semillas), en L<sub>2</sub> (0.0820&rarr;0.1013, 2/3) y de forma inconsistente en None (0.0997&rarr;0.1163, solo s<sub>3</sub>). Coherente con sobrepaso de gradiente; en L<sub>1</sub> la poda es similar (22.0 vs 21.3).</td>
+        <td>Empeora el test en L<sub>1</sub> (0.0837&rarr;0.1283; +0.027 a +0.058 en las 3 semillas), en L<sub>2</sub> (0.0820&rarr;0.1013; +0.026 y +0.031 en 2 de 3 semillas) y en None solo por s<sub>3</sub> (0.0997&rarr;0.1163; +0.051). Coherente con sobrepaso de gradiente; en L<sub>1</sub> la poda es similar (22.0 vs 21.3).</td>
       </tr>
       <tr>
         <td><b>Variedades entrelazadas de alta curvatura (Spiral)</b></td>
